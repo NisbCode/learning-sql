@@ -1,0 +1,37 @@
+Estabelece uma relação dentro da tabela
+
+Podendo ser:
+
+#FUNCIONAL#
+
+Onde um atributo Dependente precisa do atributo Determinante para que faça funcione
+X ---> Y    =     X determina funcionalmente Y
+Ex.:
+
+Numero_Pedido  -------> Prazo_Entrega_Produto 
+
+Para vc saber qual é o prazo de entrega vc tem q saber o número do pedido
+Sem o número do pedido vc não saberá do q se trata
+
+#TIPOS DE DEPENDÊNCIA FUNCIONAL#
+
+>Total = Quando em relação com uma PK composta, tem um atributo não chave que dependa dessa PK como um todo, e não somente de parte dela
+Ou seja, precisa de tds as PK combinadas para existir uma terceira não chave
+Ex.:
+A quant. de um produto precisa do número do pedido E do código do produto
+
+
+>Parcial = Depende de uma parte mas não da outra numa PK composta
+Ex.: 
+O nome da disciplina precisa apenas do ID dela, msm q ela seja uma chave composta com o ID do aluno, vc só precisa do ID da disciplina p saber qual é
+
+
+>Transitiva = Depende de um campo que também é um não chave
+Ex.:
+Entidade Pedido com atributos Num_Pedido, Prazo_Entrega, Cod_Vendedor e Nome_Vendedor
+O nome do vendedor só depende do código dele p q agt saiba
+Nesse caso seria melhor agt retirar ele dessas tabela e colocar ele em outra tabela
+
+>Multivalorada = Quando ocorre a repetição d evalores q não tem relações entre si
+Por ex um carro Uno no ano de 2016 preto, outro Uno no ano de 2015 cor prata e um Gol 2016 prata
+Os modelos, cores e anos se repetem, mas eles não tem relação entre si, já q Só pq um modelo foi criado em 2016 n necessáriamente ele será preto ou Uno

@@ -1,0 +1,7 @@
+Sever para armazenar informações sobre o conteúdo, formato, relacionamentos, estrutura e entre outros de um banco de dados
+Ajuda a diminuir a chance de erros
+
+Ele mostra alguns exemplos mas em suma é primoridal vc pôr a descrição de cada tabela
+C quem se relacionam
+Seus tipos de restrições(chaves e pá)
+E o tipo de cada atributo

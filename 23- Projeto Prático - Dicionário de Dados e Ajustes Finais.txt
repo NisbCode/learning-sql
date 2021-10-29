@@ -1,0 +1,13 @@
+Ao fazer o dicionário de dados de atributos, na hr de por o compimento
+Para saber qual colocar, tenha em mente isto:
+
+1 byte suporta 256 valores
+
+O comprimento é quantos registros ele suporta
+Ex.: 20 bytes = 20 caracteres
+
+Boolean = 1 byte = 0 ou 1 = verdadeiro ou falso
+Data geralmente é = 4 bytes
+
+
+Restrição unique manda aquilo n se repetir

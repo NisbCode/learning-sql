@@ -1,0 +1,134 @@
+Passo a passo de cm montar sua tabela:
+PS.: AS DICAS SÃO POTENCIAIS, EX.: VC PROCURAR UM VERBO Q LIGUE A ENTIDADE N FARÁ COM Q   S E M P R E  AQUILO SEJA UM ATRIBUTO, ETC
+Mas ajuda a identificar atributos/Relações/Etc
+
+
+1- Procure as entidades
+
+Vc deve achalas cm as palavras com maiores repetições
+Ex.:
+40 professores
+Então provável q Professor seja uma entidade
+
+
+<Entidades achadas>
+
+Curso
+Aluno
+Professor
+Departamento
+Disciplina
+Turma
+Histórico Escolar
+
+
+
+
+2- Procure as relações feitas entre essas entidades
+
+Uma boa forma é achar verbos de ação sobre essas entidades
+Ex.:
+Um aluno só pode estar matriculado em um curso por vez
+Estar matriculado liga Aluno à Curso
+
+
+<Relacionamentos achados>
+
+Aluno está Matriculado em Curso
+Aluno Cursa Disciplina
+Aluno Pertence a uma Turma
+Disciplina Pertence a Curso 
+Professor Mininstra Disciplina
+Professor Pertence a Departamento
+Departamento é responsável por Disciplina
+Departamento Controla Curso 
+Disciplina Depende de Disciplina(Disciplina só aparece se vc tiver feito a Disciplina anterior[Isso torna ela fazendo um relacionamento com ela msm])
+Turma Gera um Curso
+Histórico Pertence a um aluno 
+Disciplina Compõe um Histórico
+
+
+
+3-Procure os atributos feitos p essa entidade
+
+Ache algum verbo que ligue uma entidade à algo
+Ex.:
+Alunos possuem um código de identificação(RA)
+possuem liga Alunos à código de identificação
+
+
+<Atributos achados DO ALUNO>
+
+Número de Matrícula(RA)  <---Determinante
+CPF
+Nome
+Sobrenome
+Endereço
+-Rua
+-Número
+-Bairro
+-CEP
+Filiação
+Telefone  <---Multivalorada
+Código do Curso
+Status
+Sexo
+Código da Turma
+Contato   <---Multivalorada
+-E-mail
+-Whatsapp
+
+
+<Atributos achados DO PROFESSOR>
+
+Código do Professor    <---Determinante
+Nome
+Sobrenome
+Código do Departamento
+Status
+
+
+<Atributos achados DA DISCIPLINA>
+
+Código da Disciplina   <---Determinante
+Nome da Disciplina
+Descrição
+Código do Departamento
+Número de Alunos
+Carga Horária
+
+
+<Atributos achados DO CURSO>
+
+Código do Curso   <---Determinante
+Nome do Curso
+Código do Departamento
+
+
+<Atributos achados DO DEPARTAMENTO>
+
+Código do Departamento 
+Nome do Departamento
+
+
+<Atributos achados DO HISTÓRICO>
+
+Código do Histórico   <---Determinante
+Notas 
+Média
+Frequência
+Período de Realização
+RA
+Código da Disciplina
+
+
+<Atributos achados DA TURMA>
+
+Código da Turma   <---Determinante
+Período
+Código do Curso
+Número de Alunos
+Data de Início
+Data de Fim
+
+POR FIM, FAÇA UM ESBOÇO DO DIAGRAMA E COMO ELE FICARÁ *Aluna 21*

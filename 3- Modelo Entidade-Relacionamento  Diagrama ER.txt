@@ -1,0 +1,50 @@
+Mer é um tipo de modelo conceitual
+Representa de forma abstrata a estrutura q irá constituir o banco de dados
+Composto de atributos, relacionamentos e entidades
+Der é a representação gráfica desse modelo (Diagrama)
+
+#COMPONENTES DO DER CASO DE PETER CHEN#
+
+Retangulos - Representam entidades
+Elipses - Representam atributos
+Elipses Duplas - Atributos q podem ocorrer mais de uma vez(Multivalorado)
+Losangulos - Representam relacionamentos
+Linhas - Ligam atributos a entidades e entidades a relacionamentos
+
+
+----------------------------                                          -------------------------------------                                -------------------
+
+					ENTIDADE
+
+Cada objeto de uma entidade é chamada de Instância de Entidade. Se parece bastante com herança
+Temos uma entidade Carro q tem atributos cm cor, placa, etc; Suas instancias seriam um Ford e um Citroên, q tb tem cor, placa, etc
+Instâncias são basicamento os tipos de Entidade
+Uma entidade pode ser física ou abstrata 
+Ex.:    Empregados, Livros, Vendas,  Produtos
+
+#REGRAS PARA CRIAÇÃO DE NOME#
+Devem começar com uma letra
+Usar palavra no singular
+Sem espaço ou caracteres especiais (Alguns caracteres são permitidos em ALGUNS bancos de dados "_",$" e "#"
+Os nomes de colunas devem ser únicos dentro de uma tabela
+Os nomes de entidades/tabelas devem ser únicos dentro do esquema
+
+----------------------------                                          -------------------------------------                                -------------------
+
+					ATRIBUTOS
+
+Tipo de dados (domínio) é o tipo q vc pode escrever, q nem no java, String, etc
+As vezes o diagrama pode ficar poluído por conta das elipses, então tem gnt q prefere n usar elas e deixa cm se vc tivesse apagado a elipse
+
+
+#TIPOS DE ATRIBUTOS#
+
+-Simples/Atômico      = Indivisível (Tipo nome, n tem cm vc dividir isso)
+-Composto                = Pode dividir (Tipo Endereço q pode dividir em rua, CEP, Bairro)
+-Multivalorado          = Multiplos valores p o msm registro (Tipo Telefone, vc pode ter vários na msm casa)Obs.: Indentificamos ele botando * antes do seu nome
+Determinante             = Garante q uma instância n vai se repetir de (Tipo Códigos de Produto, cada um tem)Obs.: Indentificamos ele tracejando seu nome
+Identificador/Chaves  = Ele pode se repetir dependendo do tipo de chave:
+Únicas: O valor é único (determinante) UNIQUE
+Não-únicas: Usada p agrupar instâncias de classe em categorias
+Compostos : Dois ou mais atributos combinados
+

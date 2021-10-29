@@ -1,0 +1,12 @@
+Baixei a Ferramenta brModelo 
+Diretório: C:\Users\natyb\Downloads\programação\Banco de dados
+Link para download: http://www.sis4.com/brmodelo/download.html
+A *Aula 22* ensina a usar: https://www.youtube.com/watch?v=AFZSRj65_hQ&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=22
+
+E bem
+É tão simples q n tenho oq falar
+Ele tá ensinando a usar o brModelo(app)
+Só recomendo q vc se quiser criar um atributo composto 
+Clique em atributo em cima do outro atributo
+E ai converter para um Diagrama Lógico
+Existe cm vc converter indo em diagramas>comando>converter...

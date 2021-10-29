@@ -1,0 +1,10 @@
+Regrinhas ao fazer:
+
+A entidade Disciplina tem dependência nela mesma
+Temos duas formas de representarmos isso aq no modelo lógico:
+Uma linha ligando a ela mesma ou num quadro com nome de Depende de
+
+As chaves pretas são as primárias e as verdes as fk
+
+
+Arquivo feito: DER Lógico

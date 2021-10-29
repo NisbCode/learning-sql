@@ -1,0 +1,24 @@
+E aq ele coloca as cardinalidades no diagrama
+
+
+Para criar uma cardinalidade é bom fazer uma pergunta
+Ex.:
+Um Professor Pertence a quantos Departamentos?
+E assim vc coloca perto de departamento (1,1)
+Mínimo o professor pertence a um departamento e no máx a um departamento
+Já o reverso
+Um departamento pode ser pertencido por quantos professores?
+Um ou mais professores
+E assim vc coloca perto de professores (1,n)
+
+
+|----------------------| (1,1)                 (1,n)|----------------|
+|  Departamento        |----------------------------|  Professor     |
+|----------------------|                            |----------------|
+
+
+-Alunos podem trancar matrícula, não estando então matriculados em nenhuma disciplina no semestre <---Importante isso(fará com que a cardinalidade dê(0,n)
+Isso pq já q pode trancar, aquele aluno não estará matrículado
+
+
+Tome cuidado com relacionamento muitos para muitos q seria (1,n) de um lado e (1,n) do outro

@@ -1,0 +1,87 @@
+Link q usaremos:  https://www.youtube.com/watch?v=Q_KTYFgvu1s&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD
+
+
+Agora você vai criar seu primeiro banco de dados
+
+Vamos criar um banco chamado Showbusiness
+ pra isso, dê o comando
+CREATE DATABASE showbusiness;
+
+
+Aperta o ícone do relâmpago do meio
+
+Vai no quadrado onde ta escrito SCHEMA e atualiza clicando nas setinhas formando um circulo
+
+O banco showbusiness vai aparecer
+
+Volta pra parte branca
+
+Vai pra linha de baixo e dá o comando USE showbusiness; e, de novo, relampago do meio
+
+Agora você está dentro do banco showbusiness
+
+É assim que se cria um banco
+
+
+Agora vamos criar sua primeira tabela dentro do banco, a tabela "cantores"
+
+Voltando pra área de desenvolvimento, comente o que você já fez colocando os comandos entre /* ~comandos */ 
+(é interessante fazer anotações como no java também) 
+
+
+Dê o comando CREATE TABLE cantores (); e de um enter entre os parênteses
+
+Dentro dos parênteses você vai criar as colunas da tabela, contendo atributos, tipo no excel, você vai criar as colunas id, nome, genero e maiorSucesso
+
+
+A regra é colocar o nome da coluna e o tipo dela
+
+Ex:
+
+CREATE TABLE cantores (
+	
+id INT, 
+    
+nome VARCHAR(100),
+    
+genero VARCHAR(100),
+    
+maiorSucesso VARCHAR(100)
+
+);
+
+*VARCHAR(45) é a msm coisa 
+que usar String no java, é o tipo pra escrever palavras, e esse 45 nos parênteses é a capacidade do varchar, quantos digitos dele teve ter no máximo
+
+
+
+Agora você vai selecionar a tabela toda e dar ctrl + enter (ou apertar o relampago do meio, mesma coisa)
+Isso vai criar a sua tabela, como se fosse sua planilha do 
+excel
+ 
+E agora você deve adicionar valores a essa tabela
+
+Use o comando:
+ INSERT INTO cantores (id, nome, genero, maiorSucesso) VALUES (1, "BTS", "K-Pop", "DNA");
+
+Para adicionar esses dados na tabela, use ctrl+enter
+
+Use esse comando e adicione você mesma mais alguns cantores na lista, coloque mais 3 (E não se esqueça de ir mudando o id conforme você cria pra 2, 3, 4...) 
+pra cada item adicionado, dá ctrl enter em cima dele pra ele ser adicionado na tabela
+
+Agora que você criou sua tabela, você vai exibí-la
+
+Embaixo do que você já fez até agora, dê o comando SELECT * FROM cantores; e dê ctrl+enter    
+Voilá
+Ou vc pode clicar com o botão direito em cima da tabela e ir em Select Rows, irá fazer o mesmo
+
+Isso q eu te dei é como se fosse um tutorial de jogo
+ esse é o basicão do MySQL
+ pra continuar aprendendo, vai vendo os métodos naquele link, como te falei
+ mas
+ sei bem que aquele link é pouco comunicativo, então se não conseguir entender nd doq eles disserem, pode usar esse link do khan academy, eles esclarecem mais
+
+
+
+https://pt.khanacademy.org/computing/computer-programming/sql
+

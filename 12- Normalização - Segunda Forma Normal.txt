@@ -1,0 +1,11 @@
+Baseada no conceito de Dependência Funcional Total
+
+Tds os atributos tem q depender apenas e exclusivamente à tds as partes da PK(Chave-primária)
+Caso tenham dependências parciais deve se gerar uma nova tabela com os dados
+A tabela deve estar na 1FN
+
+Essa norma se baseia msm boa parte em dependências completas 
+Se vc tem um fornacedor e o código do produto cm PK
+Vc tem q ver se o telefone do fornecedor por ex é totalmente dependente das informações acima
+No caso, não é
+Então o correto seria vc pegar esse telefone e fazer uma tabela a parte apenas c os telefones

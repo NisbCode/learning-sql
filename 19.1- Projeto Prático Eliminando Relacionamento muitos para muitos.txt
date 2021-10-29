@@ -1,0 +1,19 @@
+Ao fazer as cardinalidades encontramos problemas como este relacionamento muito para muito e aq vamos resolver eles
+Esse caso pede que você desmembre essa relação para que não ocorra um erro ou dados repetidos no banco de dados
+
+Relacionamento Muitos-para-Muitos: 
+Uma Disciplina pode estar em um ou mais Hsitóricos
+E um ou mais Históricos podem estar em uma Disciplina
+
+Para resolver nós usamos uma <ENTIDADE ASSOCIATIVA>
+
+Ela trabalha com as chaves primárias de cada entidade ligando-as a uma terceita criada apenas para dissolver esse tipo de relação
+Sua forma de nomear se baseia nas entidades as quais ela se refere. Ex.:  "Curso_Disciplina"
+Os relacinamentos com este problema são:
+
+Curso Pertence Disciplina
+Disciplina Compõe Histórico
+Professor Mininstra Disciplina
+
+A ideia é formar a seguinte frase com a Entidade Associativa :
+Um curso Possui um Curso_Disciplina mas a combinação de um Curso com uma Disciplina só pode ter um Curso já q ela vai tá lá combinada já

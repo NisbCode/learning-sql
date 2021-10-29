@@ -1,0 +1,8 @@
+Tabelas compostas pelas informações dadas no levantamento e no modelo E-R
+
+Leva em conta as entidades, comprimento, atributos, tipo, relações, restrições e descrições de dada linha da tabela(ou de informações relevantes)
+
+NOT NULL = Restrição q manda q aquele campo tenhha q ser preenchido
+FK = Chave estrangeira
+PK = Chave primária
+NULL = Pode pular se quiser

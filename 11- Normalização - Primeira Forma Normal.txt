@@ -1,0 +1,13 @@
+Reprova atributos multivalorados, compostos e suas combinações
+
+Uma tabela está na 1 forma normal quando:
+
+- Somente possui valores atômicos(Indivisíveis, sem atributos multivalorados)
+Não pode ter duas ou mais informações fiferentes no msm local
+
+- Não há grupos de atributos repetidos(há apenas um dado por coluna nas linhas)
+
+- Existe uma chave primária
+
+- Relação não possui multivalorados ou relações aninhadas(Tabela dentro de outra tabela, ou seja, dados q n precisavam estar ali e sim em outra tabela)
+

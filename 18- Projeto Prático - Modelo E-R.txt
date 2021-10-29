@@ -1,0 +1,6 @@
+Tá na pasta
+Arquivo DER Intermediário
+
+E ele basicamente criou as entidades
+Atributos
+Relações

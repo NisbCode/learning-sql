@@ -1,0 +1,16 @@
+Baseada no conceito de Dependência Transitiva, ou seja, não pode ter um atributo não chave determinado funcionalmente por outro não chave
+
+Para cada atributo(ou grupo) não-chave que for um determinante na relação, crie uma nova tabela onde esse atributo será a PK na nova relação
+Mova então todos os atributos que são dependentes funcionalmente do atributo chave para a nova tabela
+O atributo (PK na nova relação) fica também na tabela original, e servirá como uma chave estrangeira para associar as duas relações
+
+Então fica assim
+Tu tem uma tabela de vendas
+Nela vc tem a nota fiscal q é a PK
+E varias não chave como o código do vendedor, o nome do vendedor, o código do produto, e a quantidade dvendida
+
+Nesse caso o nome do vendedor depende do código dele e n da nota fiscal 
+Isso é uma dependência transitiva 
+Nesse caso vc terá q criar uma segunda tabela com o nome e o código do vendedor 
+Nessa tabela o código do vendedor se tornará uma chave primária
+E não sairá da primeira tabela mas se tornará uma chave estrangeira

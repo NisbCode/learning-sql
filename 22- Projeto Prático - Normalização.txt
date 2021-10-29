@@ -1,0 +1,67 @@
+Normalizar não é uma obrigação, porém, previne de dar merda, e já não basta a nossa vida de merda
+
+======================================================================================
+
+					1FN
+
+
+Verificando no Dicionário de Dados e no diagrama se estão na primeira forma normal
+
+----------------------------------------------                                                         --------------------------------------------------------                                              ----------------------
+#RELEMBRANDO REGRAS#
+
+- Somente possui valores atômicos(Indivisíveis, sem atributos multivalorados)
+Não pode ter duas ou mais informações diferentes no msm local
+
+- Não há grupos de atributos repetidos(há apenas um dado por coluna nas linhas)
+
+- Existe uma chave primária
+
+- Relação não possui multivalorados ou relações aninhadas(Tabela dentro de outra tabela, ou seja, dados q n precisavam estar ali e sim em outra tabela)
+----------------------------------------------                                                         --------------------------------------------------------                                              ----------------------
+
+A diferença (na tabela Aluno) é q endereço agt desmembrou e ao por no dicionário de dados, colocamos os atributos Rua, CEP, Num
+Já Contato foi o atributo inteiro deixado, então ele terá q ser desmembrado a parte
+Assim como Telefone
+
+Dps dessa aula terá uma mudança do arquivo anterior para como ele fica normalizado
+
+Arquivo: Normalização
+
+PS.: O atributo Período na tabela Turma é referente ao turno- Manhã, Tarde, Noite
+E os atributos Nota e Frequencia dependem tanto de Disciplina quanto do Histórico
+======================================================================================
+
+					2FN
+
+#RELEMBRANDO REGRAS#
+
+Tds os atributos tem q depender apenas e exclusivamente à tds as partes da PK(Chave-primária)
+Caso tenham dependências parciais deve se gerar uma nova tabela com os dados
+A tabela deve estar na 1FN
+----------------------------------------------                                                         --------------------------------------------------------                                              ----------------------
+
+
+Uma boa frase para ajudar é perguntar p a PK "Se eu mudar essa PK, terá alguma não-chave afetada?
+Lembre-se q diz a respeito das não chaves (FK não conta)
+Ex.:
+Se eu mudar o Cod_Prof o Nome é alterado? Sim, já que será outro professor
+Então está correto, estamos procurando atributos q não mudariam
+
+Caso onde o atributo não está ligaod ao PK sempre:
+Nome_Rua>tabela Aluno
+Nesse caso, podemos ter vários alunos morando na mesma rua, então n necessariamente tá ligado ao PK, nesse caso, seguindo as regras, devemos criar outra tabela
+Até mesmo o CEP, levando em conta que dois alunos podem ser irmãos e morarem na mesma casa
+E o mesmo ocorre com telefone, já q mais de um aluno pode usar o msm telefone
+Então foi criado duas novas tabelas, um com o número e outro com o tipo(Residencial, Celular, Etc)
+======================================================================================
+
+					3FN
+----------------------------------------------                                                         --------------------------------------------------------                                              ----------------------
+#RELEMBRANDO REGRAS#
+
+Baseada no conceito de Dependência Transitiva, ou seja, não pode ter um atributo não chave determinado funcionalmente por outro não chave
+----------------------------------------------                                                         --------------------------------------------------------                                              ----------------------
+
+Nenhuma tabela está fora da 3 forma normal
+Obs.: Se eu tirar o CEP da tabela Endereco_Aluno

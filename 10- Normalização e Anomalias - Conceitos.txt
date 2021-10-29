@@ -1,0 +1,26 @@
+Anomalias de Atualização são problemas q occorrem em bancos de dados mal planejados e não-normalizados, geralmente ocorrendo por excesso de dados armazenados em uma
+mesma tabela
+
+São causadas pelas depêndencias parciais e transitivas
+
+São classeificadas em:
+
+>Inserção = Quando vc tenta incluir um novo adicionar um dado sem q outro esteja disponível
+Ex.: Cadastrar um novo livro sem q um autor esteja cadastrado
+
+>Exclusão = Quando vc exclui um item que tem relação com outro de outra tabela sem excluir os da outra tabela também
+
+>Modificação = Quando vc altera um dado em uma tabela e não altera a da outra
+
+
+NORMALIZAÇÃO
+
+Consiste em um processo de análise de uma relação para assegurar que seja bem formada
+Ou seja, organizar corretamente
+Normalizar também impede redundâncias (Dados repetidos)
+Uma relação normalizada vc pode modificar, excluir e inserir sem q ocorra um problema
+
+O ideal é q o projeto do banco de dados relacional alcance a FNBC ou a 3FN(3 forma normal) para cada tabela 
+A 1FN e 2FN não são adequadas por serem caminhos p chegar na 3FN ou FNBC
+
+

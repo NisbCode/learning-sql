@@ -1,0 +1,38 @@
+Um dado é um fato tipo um nome 
+
+Uma informação é um dado associado de forma q faça sentido, ex, nome de um aluno 
+
+Metadados ajuda a organizar para que não se perca/corrompa um dado, eles ficam localizados num dicionário de dados ou catálogo de dados
+Eles são dados de dados
+
+Banco de dados são conjutos de dados organizados contendo objetos, tabelas, etc
+
+SGBD Sistema de Gerenciamento de Banco de Dados, softwares q permitem aos usuários criarem e manterem um ou mais banco de dados
+Ajudam a manter o banco de dados
+Ex. de SGBDs: Oracle Database; MySQL, etc
+
+SGBDR Sistema de Gerenciamento de Banco de Dados Relacionados
+Componentes:
+Tabela:  Vai ter todos os dados necessários sobre alfgo do mundo real, como clientes e etc
+Tupla: Todos os dados requeridos por uma determinada ocorrência de entidade particular
+Coluna: Armazena um tipo específico de dado
+Relacionamento: Associação entre as entidades (tabelas), conectadas por chaves primárias e chaves estrangeriras
+Chave Primária: Coluna q identifica um registro de forma exclusiva, sem repetir (Tipo CPF)
+Chave Estrangeira: Coluna q define m as tabelas se relacionam uma c as outras
+
+No modelo Relacional agt separa por entidades q fazem relações entre si
+
+Modelos servem para comunicar ideias e devem ter mts detalhes p o desenvolvedor entender oq vc quer
+
+Relações são tabelas dentro do modelo relacional
+Organiza em linhas e colunas 
+
+Análise de requisitos vc coleta as informações p o banco de dados
+
+MER Modelo Entidade-Relacionamento vai separar a informação q vc vai armazenar no Banco das atividades a serem realizadas
+Entidade: Algo significativo sobre o qual devemos possuir informações, ex.: Clientes, pedidos
+Atributo: Coisas q qualifiquem a entidade, ex.: nome, telefone
+Relacionamento: Uma associação nomeada entre entidades, ex: Clientes estarem associados aos pedidos
+Cardinalidade: Diz a respeito da quantidade dos relacionamentos, ex.: um ou mais vezes
+
+Identificador Único (UID) especifica um atributo ou relacionamentos usados p distinguir uma entidade

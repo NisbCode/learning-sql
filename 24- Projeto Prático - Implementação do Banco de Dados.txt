@@ -1,0 +1,53 @@
+Usamos o MySQL
+Nome do arquivo: "Projeto Modelagem Banco de Dados"
+
+<Comandos>
+
+CREATE DATABASE = Cria um banco de dados
+
+USE = Usa o banco de dados em questão
+
+CREATE TABLE = Cria uma tabela
+
+INT = Identifica um atributo cm inteiro
+
+PRIMARY KEY = Identifica um atributo cm chave primária
+
+AUTO_INCREMENT = Faz com que o atributo se preencha sozinho aleatoriamente
+
+VARCHAR(20) = variável charactere com 20 bytes
+
+NOT NULL = Identifica um atributo cm não podendo ficar nulo
+
+TINYINT = Boolean?(Confere pf)
+
+CONSTRAINT + atributo novo + FOREIGN KEY + (Atributo referenciado) + REFERENCES + Nome da entidade q tem o real atributo + (Atributo referenciado)
+Ex.:
+ CONSTRAINT fk_Codigo_departamento FOREIGN KEY(Cod_Departamento) REFERENCES Departamento (Cod_Departamento)
+
+NULL = Pode pernanecer nulo
+
+						COMANDOS DE TESTES
+
+Ps.: Seleciona o comando para que ele seja executado e clique em executar(O raiozinho) ou ctrl+enter
+
+
+INSERT INTO + Entidade + (Atributo)= Insere valores no atributo da entidade dita; Podendo ter multiplos atributos sendo preenchidos separando por ","
+
+select * from + Entidade; = Mostra tudo preenchido da entidade
+
+select A.Nome_Aluno, A.Sobrenome_Aluno, C.Nome_Curso
+    = Selecione esses atributos
+from Curso C                                                                                = Das tabelas Curso
+inner join Aluno A                                                                        = e Aluno (As letras ao lado do nome da entidade serão meio q uma variável)
+on C.Cod_Curso = A.Cod_Curso;                                               = No atributo PK Cod_Curso, da tabela C(Curso), ligando as tabelas pela FK da tabela Aluno
+(funciona basicamente cm uma ponte)
+
+alter table Disc_Hist                                  = Modifica na tabela Disc_Hist
+modify column NOTA float(4,2)            = Os valores da coluna Notas 
+
+where + variável da entidade + .atributo em questão + = + valor q vc quer   = Pega aquele valor
+
+SELECT CONCAT(P.Nome_Professor, ' ', P.Sobrenome_Professor) AS Docente, = Concat vai fazer com q vc use ambos atributos ditos e coloque a junção na var.
+Docente
+

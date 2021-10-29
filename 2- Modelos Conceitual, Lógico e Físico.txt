@@ -1,0 +1,29 @@
+A arquitetura de Três Níveis é a tranformação da ideia do mundo observado até a versão final:
+
+Modelo Conceitual: Alto nível
+Primeira fase da modelagem=: representa o mundo real por meio de uma visão simplificada dos dados e seus relacionamentos
+Determina as informações a serem guardadas
+Ex.: Nome de um produto, sua categoria, quantidade, etc
+
+
+
+Modelo Lógico: 
+Tipo um diagrama, fica mais proximo de cm deverá ser feito mas ainda sim é algo fácil de se entender
+Os dados tem q estar completamente definidos
+
+
+
+Modelo Físico: Baixo nível
+Detalhar a estrutura colocada no BD(Bando de Dados), usando tabelas, ampos, restrições, etc
+
+#ETAPAS DO DESENVOLVIMENTO DE UM BD#   Aula 3
+
+1.     Especificação e Análise de Requisitos
+	a. Os requisitos são documentados
+2.     Projeto conceitual
+	a. Baseado nos requisitos
+3.     Projeto Lógico
+	a. Expresso em um modelo de dados, como o relacional
+4.     Projeto Físico
+	a. Especificações para armazenar e acessar o banco de dados
+	b. Implementação do BD, inserção de dados reais e manutenção

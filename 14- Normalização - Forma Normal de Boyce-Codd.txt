@@ -1,0 +1,9 @@
+Vc usa essa normalização quando ao normalizar até a 3FN suas tabelas conterem:
+
+- duas ou mais chaves candidatas
+- essas chaves cantidatas forem compostas
+- elas estivessem superposição(atributos em comum)
+
+Caso não tenha isso, pode deixar na 3FN
+
+Para resolver vc tem q separar as tabelas a forma q a chave principal não se repita e possa valer para ambas 

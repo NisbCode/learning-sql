@@ -1,0 +1,24 @@
+Entidade é um conceito do mundo real q vc vai modelar no BD
+
+Relação conjunto de registros(tuplas) q representam um modelo de uma entidade. Ex.: 
+A relação é a tabela td, cm eles interagem
+							          Entidade: Produto; 
+
+Atributo:                                                                                                             ID_Produto, Nome_Produto, Preco_Produto
+Instâncias:                                                                                                                  1020              Mesa                   600
+                                                                                                                                  1021             Mouse                   60
+                                                                                                                                  1022            Roupa                    15
+Cada registro representa uma instância de entidade, e o conjunto de tds as instâncias é chamado de relações
+ 
+#TABELA DE RELAÇÕES#
+
+É bidimensional e criada a partir de uma entidade, formada de:
+
+-Linhas: contém os dados sobre instâncias de uma entidade(registros)
+
+-Colunas: contém dados sobre atributos da entidade(campos)
+
+#REGRAS#
+
+Não pode ter duas linhas idênticas
+Cada coluna possui um nome único

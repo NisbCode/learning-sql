@@ -1,0 +1,42 @@
+É oq liga/associa entidades
+
+Representado por um Losango
+
+
+#CARACTERÍSTICA#
+Graus deles:
+
+Unário: Da entidade com ela msm
+
+Binário (mais comum): Da entidade com outra
+
+Ternário: Da entidade com mais duas
+
+
+
+===================                                                           =========================                               =============
+
+					CHAVES
+
+Pode ser uma ou mais colunas de uma relação cujos valores são usados para identificar de forma exclusiva uma linha ou conjunto de linha
+Ela pode ser única (identifica uma única linha) ou não-única(identifica um conjunto de linhas)
+
+>CHAVES ÚNICAS PODEM SER:
+
+-Candidata: Atributos ou grupo de atributos c potencial p serem chaves primárias. Caso negadas elas se tornam Alternativas
+
+-Composta: Composta de duas ou mais colunas. Usada quando vc precisa de mais coluna sp ter um valor exclusivo
+
+-Primária: Chave principal da tabela. Identifica de forma exclusiva sem poder repetir ou ser de valor nulo
+É melhor não mudar esse valor para não dar erro
+
+-Surrogada/Substituta: Vc cria uma coluna(Sem relevancia) usada para organizar e relacionar colunas. Não é recomendado usar este método, apenas se n der p criar
+Uma chave primária nem composta
+
+
+>NÃO ÚNICAS:
+
+-Estrangeira:  Coluna q estabelece um relacionamento de uma chave primária com uma outra chave primária. Identifica, assim, quem se relaciona c quem
+O valor de uma chave estrangeira deve corresponder a um valor existente em uma chave primária associada. Caso contrário, deve ser nulo
+
+

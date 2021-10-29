@@ -1,0 +1,16 @@
+Manutenção e garantia de consistencia dos dados
+
+#RESTRIÇÔES#
+
+-Integridade Referencial: Assegura q os valores q vc põe em uma tabela são válidos baseados nos valores em outra tabela relacionada
+(Vc só pode ter em um local algo permitido no outro local no caso de relacionamentos)
+Também não poderá excluir um valor relacionado a outro sem trocar o outro
+
+-Integridade de Domínio: Os valores q vc colocar numa coluna tem q ser do domínio(tipo) permitido
+
+-Integridade de Vazio: Fala se o valor é obrigatório ser colocado ou não
+
+-Integridade de Chave: Caso vc repita os valores numa chave primária
+
+-Integridade Definida pelo Usuário: É as restrições q vc conversa c o cliente p saber oq ele define
+

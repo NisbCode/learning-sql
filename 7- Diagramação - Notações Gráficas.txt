@@ -1,0 +1,36 @@
+14:27
+27/04/19
+
+Diagramação serve p entender um processo e poder se comunicar em gp
+
+#NOTAÇÕES GRÁFICAS MAIS UTILIZADAS#
+
+>IDEF1X
+>Bachman
+>Min-Max
+>Pé de Galinha(Crow's Foot)
+>Martin
+>UML
+>Peter Chen
+
+#PARA CRIAR VC USA ESSES SOFTWARES#
+
+Ferramentas CASE:
+
+>Astah                                 <Mais usado
+>Lucidchart
+>erwin Data Modeler
+>ERDPlus
+>GenMyModel
+>Star UML                          <Mais usado
+>Microsoft Visio
+>MySQL Workbech
+>Visual Paradigm                <Mais usado
+
+
+Para ver cm funciona a Notação do Peter Chen e um pouco da Pé de Galinha leia o bloco de notas "3- Modelo Entidade-Relacionamento  Diagrama ER"
+
+Nessa aula ele tb criou um diagrama bem simples utilizando o Lucidchart
+E export nesses programas é uma ferramenta bem interessante por transformar um diagrama em um código com a linguagem desejada
+https://www.youtube.com/watch?v=9plIQlzzPHA&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=12
+14:48 o segundo onde fala sobre

@@ -1,0 +1,19 @@
+Diz a respeito ao número de itens q se relacionam nas entidades
+Podendo ser máxima ou mínima
+
+Usando a notação de Peter Chen:  (1, 1)
+                                                         | |
+                                       Mínima<---   --->Máxima
+
+Tb temos o tipo Pé de Galinha (Pesquisa q eu n vou ficar desenhando sapoha)
+Mas qnd vermos as linhas inteiras ------------ vão indicar um relacionamento forte, onde uma entidade filha PRECISA da pai p funcionar(A chave primária de uma
+entidade filha contém a chave primária de uma entidade-pai) Se a entidade pai n existir a filha desaparece
+E c linhas tracejadas - - - - - - - - vão mostrar um relacionamento fraco onde a exisência de uma entidade é independente das demais(A chave primária de uma
+entidade filha NÃO contém a chave primária de uma entidade-pai)
+
+
+Representações:
+
+1:1            Um para um
+1:N           Um para muitos
+N:M         Muitos para muitos
