@@ -1,0 +1,110 @@
+#COMANDO ALTER TABLE#
+
+Altera elementos de uma tabela
+
+
+						#EXCLUIR#
+
+		ALTER TABLE <nome tabela>
+		DROP COLUMN <nome coluna>;
+
+
+Exemplo – Excluindo a coluna ID_autor da tabela tbl_livro:
+
+ALTER TABLE tbl_livro
+DROP COLUMN ID_autor;
+
+
+						#EXCLUIR CHAVE ESTRANGEIRA#
+
+		ALTER TABLE tabela
+		DROP PRIMARY KEY;
+
+
+						#ADICIONAR#
+
+		ALTER TABLE tabela
+		ADD  coluna tipo_dados constraints;
+
+
+
+						#TRABALHANDO NO NOSSO BD#
+
+	1- Vamos adicionar a coluna id_autor na tabela tbl_livro, c a constraint de chave estrangeira (a chave primária tá na tabela tbl_autores):
+
+ALTER TABLE tbl_livro
+ADD  ID_Autor  SMALLINT NOT NULL;
+
+
+	2- Vamos adicionar a chave estrangeira agora:
+
+ALTER TABLE tbl_livro
+ADD CONSTRAINT fk_ID_Autor
+FOREIGN KEY (ID_Autor)
+REFERENCES tbl_autores (ID_autor)
+
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+
+	3- Continuando os exemplos, vamos adicionar à tabela tbl_livro a coluna id_editora:
+
+ALTER TABLE tbl_livro
+ADD  ID_editora  SMALLINT NOT NULL;
+
+
+	4- E fazê-la chave estrangeira da tabela tbl_editoras:
+
+ALTER TABLE tbl_Livro
+ADD CONSTRAINT fk_id_editora
+FOREIGN KEY (ID_editora)
+REFERENCES tbl_editoras (ID_editora)
+
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+
+	5- Também vamos criar o relacionamento entre a tabela de livros e a tabela de categorias:
+
+ALTER TABLE tbl_Livro
+ADD CONSTRAINT fk_id_categoria
+FOREIGN KEY (ID_Categoria)
+REFERENCES tbl_categorias (ID_Categoria)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+
+#ALTERAR UMA TABELA#
+
+Podemos alterar colunas, por exemplo mudando o tipo de dados:
+
+ALTER TABLE tbl_Livro
+MODIFY COLUMN ID_Autor SMALLINT;
+ALTER TABLE – ADD PK
+
+
+	1- Podemos tb alterar uma coluna, adicionando constraints, cm uma chave primária
+Veja como ficaria a adição da restrição de chave primária a uma coluna de nome ID_Cliente em uma tabela fictícia chamada Clientes:
+
+ALTER TABLE Clientes
+ADD PRIMARY KEY (ID_Cliente)
+
+>Obs. A coluna ID_Cliente deve existir antes de ser transformada em chave primária.
+
+
+	2- A coluna ID_Cliente receberá a Constraint (restrição) PRIMARY KEY, e passará a ser a chave primária da tabela.
+
+
+#EXCLUIR CONSTRAINTS#
+
+Pode-se excluir uma chave primária (ou outra constraint):
+
+ALTER TABLE <nome tabela>
+DROP PRIMARY KEY;
+DROP TABLE                                         –> Excluir tabela
+
+
+#EXCLUIR TABELA#
+
+
+DROP TABLE <nome tabela>;

@@ -1,0 +1,45 @@
+#O QUE É#
+
+Pode-se dar um nome diferente (amigável) a uma coluna ou tabela ao retornar o resultado de uma consulta, de modo q seja mais fácil ou intuitivo entender os 
+dados retornados. Para isso, usamos a claúsula AS
+PS.: ENTÃO, DEMOROU P EU SACAR, MAS ISSO É ÚTIL PQ ELE RETORNA UM NOME MAIS ÚTIL DE ENTENDER DO Q "Nome_Livro"
+
+
+#SINTAXE DE ALIAS P COLUNAS#
+
+	SELECT coluna
+	AS alias_coluna
+	FROM tabela AS alias_tabela;
+
+#EXEMPLO#
+
+				1- Retornar a coluna Nome_Livro com o nome de Livro, simplesmente:
+
+SELECT Nome_Livro
+AS Livro
+FROM tbl_Livro;
+
+
+				2- Podemos tb aplicar um alias a uma coluna sem a necessidade de usar a palavra AS
+
+Inserir o alias desejado logo após o nome da coluna, sem separação por vírgulas. 
+
+SELECT Nome_Livro Livro
+FROM tbl_Livro;
+
+
+				3- P aplicar alias em mais de uma coluna
+
+Acrescente-as normalmente, separando-as por vírgulas, e incluindo os alias logo após o nome de cada coluna.
+Além disso, podemos criar alias usando palavras compostas, incluindo espaços, bastando p isso envolver o alias entre aspas.
+ O exemplo a seguir mostra ambas possibilidades juntas:
+
+SELECT Nome_Livro Livro, Preco_Livro 'Preço do Livro'
+FROM tbl_Livro;
+
+
+				4- Recomenda-se também 
+
+O uso de aspas em aliases q contém caracteres especiais ou q precisem respeitar diferenciação entre maiúsculas e minúsculas (case-sensitive).
+
+OBS.: É possível também usar os aliases em tabelas inteiras

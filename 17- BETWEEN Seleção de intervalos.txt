@@ -1,0 +1,29 @@
+#O QUE É#
+
+Nos permite selecionar intervalos de dados ao retornar os resultados de uma consulta.
+Podemos usar BETWEEN p, por ex, retornar registros cujos preços tejam entre 2 valores distintos, ou registros contidos dentro de 1 intervalo de datas especificado
+
+
+#SINTAXE#
+
+	SELECT colunas FROM tabela
+	WHERE coluna BETWEEN valor1 AND valor2;
+
+Obs.: Usamos o operador lógico AND para auxiliar na criação do código de consulta.
+
+
+#EXEMPLO#
+
+				1- Vamos retornar todos os livros da tabela tbl_livro cuja data de publicação esteja entre 17/05/2004 e 17/05/2011 
+(note cm a data é fornecida no código: ano|mês|dia):
+
+SELECT * FROM tbl_Livro
+WHERE Data_Pub BETWEEN '20040517' AND '20110517';
+
+
+				2- Agora vamos retornar os nomes dos livros e seus respectivos preços, da tabela tbl_livros, porém somente os livros 
+							cujos preços tiverem entre R$ 40,00 e 60,00:
+
+SELECT Nome_Livro AS Livro, Preco_Livro AS Preço
+FROM tbl_Livro
+WHERE Preco_Livro BETWEEN 40.00 AND 60.00;

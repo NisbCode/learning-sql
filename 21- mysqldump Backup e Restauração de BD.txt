@@ -1,0 +1,63 @@
+#O QUE VAMOS FAZER#
+
+Faremos o backup de um banco de dados que está rodando no MySQL em um servidor Linux. 
+Para realizar backup e restauração rodando o MySQL  no Microsoft Windows, use o PHPMyAdmin.
+
+
+#COMO FAZER#
+
+Para isso vamos usar o comando mysqldump, que será executado no terminal do Linux, de acordo com a sintaxe a seguir 
+(criando o arquivo de backup cujo nome você deverá especificar, com a extensão .sql):
+
+mysqldump -u root -p nome_banco > arquivo_backup.sql
+
+
+#EXEMPLOS#
+
+Por exemplo, para realizarmos o backup do banco de dados db_Biblioteca no diretório do usuário fabio usamos o comando a seguir
+
+mysqldump -u root -p db_biblioteca > C:\Users\natyb\Desktop\MySQL\Backup\db_biblioteca.sql
+
+PS.: Esse comando NÃO ESTÁ FUNCIONANDO :)
+Então eu cacei na porra da internet algo sobre e pqp, mais fácil fazer pelo próprio workbench
+Então aq vou te ensinar a fazer, graças a um vídeo: 
+
+https://ruclip.com/video/w6OYS_M7hTM/curso-mysql-08-gerenciando-c%C3%B3pias-de-seguran%C3%A7a-mysql.html
+
+
+Abra o MySQL
+Vá em servers
+Data Export
+Deleciona o seu db
+Clica nele e veja se são tds as tabelas q quer msm
+Logo embaixo disso, vc vai ter a opção de exportar só os dados ou a estrutura ou ambos, vou fazer c ambos pq quero td bonitinho
+Abaixo disso, temos 3 caixas p vc escolher, se vc quer os Triggers e etc, mas cm nem sei q porra é essa ainda, agt pula
+Abaixo*3, vc vai escolher o tipo de forma q quer q seja exportado,  é confome vc precisar, Um exporta tabela por tabela e oq eu quero agr exporta junto
+Vc tem a opção de nomear onde vc quer q exporte e qual o nome
+E por ulltimo, recomendado DEMAIS q vc selecione "Include Create Schema" isso vai incluir logo as pastas criadas p q vc n tenha q ficar codificando isso dnv
+Feito isso ele te pede a senha, digite "bank", q é nossa senha
+
+
+#TESTANDO SE FUNCIONOU#
+
+Você pode abrir o arquivo resultante com algum editor de textos no terminal para ver seu conteúdo
+OU
+ls C:\Users\natyb\Desktop\MySQL\Backup\db*
+
+
+#RESTARAÇÃO DO BANCO DE DADOS#
+
+Se o banco de dados apresentar algum problema e precisar ser restaurado a partir do backup, siga o procedimento a seguir:
+
+				1- Crie um banco de dados novo no servidor, com o nome que desejar. Por exemplo, “teste-restore”;
+
+				2- Execute o seguinte comando (no terminal):
+
+mysql -u root -p banco_criado < backup.sql
+
+
+#EXEMPLO2#
+
+		Crie um novo banco denominado teste-restore; Restaure o banco de dados db_Biblioteca digitando o comando a seguir:
+
+mysql -u root -p teste-restore < /home/fabio/db_Biblioteca.sql

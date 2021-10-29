@@ -1,0 +1,110 @@
+DECLARAÇÃO CREATE TABLE #
+
+Para criar tabelas em um banco de dados, usamos a declaração CREATE TABLE
+ 
+CREATE TABLE [IF NOT EXISTS] nome_tabela (
+       coluna tipo_dados constraints
+       coluna tipo_dados constraints
+       coluna tipo_dados constraints
+       ...
+);
+
+
+Ao criar uma, precisamos especificar: 
+>o nome da tabela
+>os nomes das colunas q a comporão
+>seus respectivos tipos de dados
+>eventuais constraints.
+
+
+#TIPOS  MAIS COMUNS DE DADOS#
+
+Tipo				Descrição
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INT				Inteiros entre -2,147,483,648 e 2,147,483,647
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TINYINT				Números inteiros de -128 a 127
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SMALLINT				Números inteiros de -32768 a 32767
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MEDIUMINT			Números inteiros de -8388608 a 8388607
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BIGINT				Números entre -9,223,372,036,854,775,808 e 9,223,372,036,854,775,807
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DECIMAL(M,D)			Ponto decimal com M dígitos no total (precisão) e D casas decimais (escala); o padrão é 10,0; M vai até 65 e D até 30
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FLOAT(M,D)			Ponto flutuante com precisão M e escala D; o padrão é 10,2; D vai até 24.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CHAR(M)				String que ocupa tamanho fixo entre 0 e 255 caracteres
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BOOL / BOOLEAN			Valores binários 0 / 1; Na verdade, é um alias para o tipo TINYINT(1)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+VARCHAR(M)			String de tamanho variável, com até 65535 M caracteres.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BLOB / MEDIUMBLOB/ TINYBLOB	Campo c tamanho máx de 65535 caracteres binários; ‘Binary Large Objects’ são usados p armazenar grandes 
+				quantidades de dados, cm imagens
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MEDIUMTEXT			Permite armazenar até 16.777.215 caracteres.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LONGTEXT			Permite armazenar até 4.294.967.295 caracteres.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATE				Uma data de 01/01/1000 a 31/12/9999, no formato YYYY-MM-DD
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATETIME			Uma combinação de data e hora de 01/01/1000 00:00:00 a 31/12/9999 23:59:59, 
+				no formato YYYY-MM-DD HH:MM:SS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TIME				Hora apenas, no formato HH:MM:SS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+YEAR(M)				Ano nos formatos de 2 ou 4 dígitos; Se forem 2 (YEAR(2)), ano vai de 1970 a 2069; para 4 (YEAR(4)), 
+				vai de 1901 a 2155. O padrão é 4
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AUTO_INCREMENT			Aquele dado se faz sozinho p q vc n tenha q ficar criando núm td hr. O núm criado começa de 1, somando de 1 em 1
+				É possível pôr quando vc quer q ele comece,  pondo no fim do parênteses: AUTO_INCREMENT =15;
+				Para ver o ultimo auto icremento colocado, use: SELECT MAX(<coluna>) FROM <tabela>
+				Tb é válido mudar o auto incremento de uma tabela no meio do caminho, se o ultimo valor criado for, sl, 9 e vc
+				quer q ele aumente direto p 22, vc pode usar o: ALTER TABLE <nome da tbl> AUTO_INCREMENT = <valor>;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#CRIANDO AS TABELAS NO BD#
+
+				1- Primeiro vamos criar uma tabela para os livros, de nome tbl_livro
+
+USE db_Biblioteca;
+CREATE TABLE IF NOT EXISTS tbl_livro (
+ID_Livro SMALLINT  AUTO_INCREMENT PRIMARY KEY,
+Nome_Livro VARCHAR(70) NOT NULL,
+ISBN13 CHAR(13),
+ISBN10 CHAR(10),
+ID_Categoria SMALLINT,
+ID_Autor SMALLINT NOT NULL,
+Data_Pub DATE NOT NULL,
+Preco_Livro DECIMAL(6,2) NOT NULL
+);
+
+
+				2- Agora, vamos criar uma tabela para armazenar os dados dos autores:
+
+CREATE TABLE tbl_autores (
+ID_Autor SMALLINT PRIMARY KEY,
+Nome_Autor VARCHAR(50) NOT NULL,
+Sobrenome_Autor VARCHAR(60) NOT NULL
+);
+
+
+				3- Uma para armazenar as categorias de livros:
+
+CREATE TABLE tbl_categorias (
+ID_Categoria SMALLINT PRIMARY KEY,
+Categoria VARCHAR(30) NOT NULL
+);
+
+
+				4- E, por fim, criamos uma tabela para armazenar os dados das editoras:
+
+CREATE TABLE tbl_editoras (
+ID_Editora SMALLINT PRIMARY KEY AUTO_INCREMENT,
+Nome_Editora VARCHAR(50) NOT NULL
+);
+
+
+				5- As tabelas criadas ainda n tão relacionadas entre si. Veremos cm fazer issonas próximas lições

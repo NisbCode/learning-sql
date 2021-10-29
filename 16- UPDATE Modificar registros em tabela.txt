@@ -1,0 +1,29 @@
+#PORQUE USAR#
+
+É muito comum alterar o valor de um registro, por exemplo alterando o endereço de um cliente em um banco de dados, ou o telefone, ou o preço de um produto
+
+#COMO USAR#
+
+Para alterar um registro e uma tabela usamos o comando UPDATE, segundo a sintaxe abaixo:
+
+	UPDATE tabela                                            <---TEM O NOME DA TABELA
+	SET coluna = novo_valor_armazenado     <---O NOME DE QUAL A COLUNA E SEU NOVO VALOR, POR EX PRODUTO Q VAI VIRAR: PÃO
+	WHERE coluna = valor_filtro;                   <---TEM QUAL DOS PRODUTOS VC QUER Q MUDE, SL, PRODUTO ID 7
+
+>>Observação importante: Caso não seja usada a cláusula WHERE para filtrar os registros, todos os dados da coluna serão alterados!<<
+
+
+#EXEMPLO#
+
+				Iremos alterar o nome de um livro na tabela tbl_livros, cujo ID é igual a 101, para “SSH, o Shell Seguro”:
+
+UPDATE tbl_Livro
+SET Nome_Livro = 'SSH, o Shell Seguro'
+WHERE ID_LIVRO = 101;
+
+
+				Vamos aumentar o preço do livro cujo ISBN é 9780735640610 para R$ 47,20 (atualmente ele custa R$ 45,30):
+
+UPDATE tbl_livro
+SET Preco_Livro = 47.20
+WHERE ISBN = '9780735640610';

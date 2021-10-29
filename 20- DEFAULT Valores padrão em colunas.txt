@@ -1,0 +1,57 @@
+#PARA QUE SERVE#
+
+A constraint DEFAULT é utilizada para inserirmos um valor padrão em uma coluna no MySQL. 
+Esse valor padrão é inserido automaticamente nos registros, se nenhum valor for especificado para a coluna em questão.
+
+
+ #SINTAXE#
+		Sintaxe para criar um padrão em uma nova tabela onde uma coluna tem o valor padrão São Paulo:
+
+CREATE TABLE nome_tabela
+(coluna1 tipo restrição,
+coluna1 tipo DEFAULT ‘São Paulo’
+colunaN tipo restrição
+)
+
+
+		Sintaxe para criar um padrão em uma tabela já existente:
+
+ALTER TABLE nome_tabela
+MODIFY COLUMN nome_coluna tipo_dados DEFAULT ‘valor_padrão’;
+
+
+#EXEMPLOS#
+
+				1- Aplicando Padrões: criar o padrão de sobrenome “da Silva” na coluna Sobrenome_autor da tabela tbl_autores:
+
+ALTER TABLE tbl_autores
+MODIFY COLUMN Sobrenome_Autor Varchar(60)
+DEFAULT 'da Silva';
+
+
+				2- Inserir registro para teste:
+
+INSERT INTO tbl_autores (ID_Autor, Nome_autor)
+VALUES (6, 'João');
+Não foi especificado o sobrenome do autor; será assumido o padrão criado.
+
+
+				3- Verificando o resultado:
+
+SELECT * FROM tbl_autores;
+Desaplicando Padrões
+
+
+				4- É possível eliminar o valor padrão aplicado a uma coluna
+
+Vamos eliminar o padrão da coluna Sobrenome_autor e testar:
+
+ALTER TABLE tbl_autores
+MODIFY COLUMN Sobrenome_Autor Varchar(60);
+
+
+				5- Testando se funcionou
+
+INSERT INTO tbl_autores (ID_Autor, Nome_autor)
+VALUES (7, 'Joana');
+SELECT * FROM tbl_autores;

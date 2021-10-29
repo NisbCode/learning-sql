@@ -1,0 +1,36 @@
+#CONSULTAS ORDENADAS CRESCENTES OU DECRESCENTES#
+
+	SELECT colunas FROM tabela
+	ORDER BY coluna_a_ordenar;
+
+
+#ORDEM POR CLASSIFICAÇÃO DO TIPO DE DADO#
+
+ASC – Ordem ascendente                          (Já é o padrão, s en colocar msm assim ele faz isso só de colocar ORDER BY)
+DESC – Ordem descendente (inversa)
+
+>Valores numéricos são exibidos com os menores valores primeiro (do menor para o maior).
+>Valores de data são mostrados com os valores menores primeiro, o que significa as datas mais antigas (do mais antigo para o mais recente).
+>Valores de caracteres são exibidos em ordem alfabética.
+>Quando houver valores nulos (NULL), eles serão mostrados por último (em sequências descendentes, com DESC, são mostrados primeiro
+
+
+#DICA#
+
+É possível classificar os dados da consulta usando uma coluna que não esteja presente na lista de colunas da declaração SELECT
+
+
+#EXEMPLOS DE CM FICA#
+
+SELECT * FROM tbl_Livro
+ORDER BY Nome_Livro ASC;
+
+SELECT Nome_Livro, ID_Editora
+FROM tbl_Livro
+ORDER BY ID_Editora; -- (ordem crescente)
+
+
+SELECT Nome_Livro, Preco_Livro
+FROM tbl_Livro
+ORDER BY Preco_Livro DESC;
+-- (ordem decrescente)

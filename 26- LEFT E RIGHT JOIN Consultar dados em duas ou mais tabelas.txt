@@ -1,0 +1,107 @@
+Link do documento: http://www.bosontreinamentos.com.br/mysql/mysql-left-e-right-join-consultar-dados-em-duas-ou-mais-tabelas-30/
+
+#CONTINUANDO COM OUTER JOINS#
+
+Há três tipos principais:
+
+LEFT JOIN: Retorna todas as linhas da tabela à esquerda, mesmo se não houver nenhuma correspondência na tabela à direita. Ou seja, aquela q vc coloca no FROM
+RIGHT JOIN: Retorna todas as linhas da tabela à direita, mesmo se não houver nenhuma correspondência na tabela à esquerda.
+FULL JOIN: Retorna linhas quando houver uma correspondência em qualquer uma das tabelas. É uma combinação de LEFT e RIGHT JOINS.
+
+ 
+#SINTAXE DE CADA UM#
+
+>>>LEFT JOIN
+
+SELECT colunas
+FROM tabela_esq
+LEFT (OUTER) JOIN tabela_dir
+ON tabela_esq.coluna=tabela_dir.coluna;
+
+>Exemplo:
+
+SELECT * FROM tbl_autores
+LEFT JOIN tbl_Livro
+ON tbl_Livro.ID_Autor = tbl_autores.ID_Autor;
+
+
+>>>LEFT JOIN excluindo correspondências:
+
+SELECT coluna
+FROM tabela_esq
+LEFT (OUTER) JOIN tabela_dir
+ON tabela_esq.coluna=tabela_dir.coluna
+WHERE tabela_dir.coluna IS NULL;
+
+>Exemplo:
+
+SELECT * FROM tbl_autores
+LEFT JOIN tbl_Livro
+ON tbl_Livro.ID_Autor = tbl_autores.ID_Autor
+WHERE tbl_Livro.ID_Autor IS NULL;
+LEFT JOIN MySQL
+
+
+>>>RIGHT JOIN
+
+SELECT colunas
+FROM tabela_esq
+RIGHT (OUTER) JOIN tabela_dir
+ON tabela_esq.coluna=tabela_dir.coluna;
+
+>Exemplo:
+
+SELECT * FROM tbl_Livro AS Li
+RIGHT JOIN tbl_editoras AS Ed
+ON Li.ID_editora = Ed.ID_editora;
+RIGHT JOIN MySQL
+
+
+>>>RIGHT JOIN excluindo correspondências:
+
+SELECT coluna
+FROM tabela_esq
+RIGHT (OUTER) JOIN tabela_dir
+ON tabela_esq.coluna=tabela_dir.coluna
+WHERE tabela_esq.coluna IS NULL;
+
+>Exemplo:
+
+SELECT * FROM tbl_Livro
+RIGHT JOIN tbl_editoras
+ON tbl_Livro.ID_editora = tbl_editoras.ID_editora
+WHERE tbl_Livro.ID_editora IS NULL;
+
+
+>>>FULL JOIN
+
+SELECT colunas
+FROM tabela1
+FULL (OUTER) JOIN tabela2
+ON tabela1.coluna=tabela2.coluna;
+
+>>>FULL JOIN excluindo correspondências:
+
+SELECT colunas
+FROM tabela1
+FULL (OUTER) JOIN tabela2
+ON tabela1.coluna=tabela2.coluna
+WHERE tabela1.coluna IS NULL
+OR tabela2.coluna IS NULL;
+
+
+>>>CROSS JOIN
+
+Um CROSS JOIN retorna um produto cartesiano entre as tabelas, mostrando todas as combinações possíveis entre os registros.
+
+SELECT colunas FROM tabela1
+CROSS JOIN tabela2;
+
+
+#EXEMPLO DE CROSS JOIN#
+
+				Retornar Nome e Preço dos livros, cruzando os dados com a tabela de autores:
+
+SELECT Nome_Livro, Preco_Livro
+FROM tbl_livro
+CROSS JOIN tbl_autores;

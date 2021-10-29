@@ -1,0 +1,23 @@
+Vc tem duas opções
+Usando o brModelo
+Ou MySQL
+
+Por MySQL
+
+>Home
+>Desenho de diagramas ali
+>+
+>Add Diagram
+>Database
+>Reverse Engine
+>StoredConnection(Seleciona o 1 q tiver, no caso, Local Instance MySQL
+>next
+>tudo selecionado
+>next
+>O Script q vc quer mudar
+>next
+>next
+>Selecionado a caixa de import e o de Place
+>Execute
+>next
+>Finish

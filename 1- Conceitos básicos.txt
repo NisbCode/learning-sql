@@ -1,0 +1,23 @@
+#O QUE É SGBDR#
+
+SIstema Gerenciador de Banco de Dados Relacional, trata-se de um sistema baseado no modelo relacional
+
+
+#COMPOSTOS POR#
+
+Tabela:                              Vai ter todos os dados necessários sobre alfgo do mundo real, como clientes e etc
+Tupla/Registros:               Todos os dados requeridos por uma determinada ocorrência de entidade particular
+Coluna/Atributos:             Armazena um tipo específico de dado
+Relacionamento:              Associação entre as entidades (tabelas), conectadas por chaves primárias e chaves estrangeriras
+Chave Primária:                Coluna q identifica um registro de forma exclusiva, sem repetir (Tipo CPF)
+Chave Estrangeira:            Coluna q define m as tabelas se relacionam uma c as outras
+
+
+#GRUPOS DE COMANDOS#
+
+São divididos em 4 principais:
+
+DDL			->Data Definition Language	    =>Definem o formato do BD, ou seja, cria tabelas, exclui, etc
+DML			->Data Manipulation Language       =>Manipulam as informações que vc guarda no BD, ou seja, insere uma linha, exclui, etc
+DCL			->Data Control Language	    =>Permissões ou privilégios para um usuário com determinada coisa, tipo ver um arquivo
+DQL			->Data Query Language	    =>Comandos para consultas e etc

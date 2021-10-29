@@ -1,0 +1,30 @@
+Sintaxe:
+
+	SELECT coluna(s) FROM Tabela;
+Exemplos:
+
+
+				Consultar nomes dos autores cadastrados na tabela de autores:
+
+SELECT Nome_Autor FROM tbl_Autores;
+
+
+				Consultar todos os dados da tabela de autores (usamoso caractere curinga * para denotar todos os campos):
+
+SELECT * FROM tbl_Autores;
+
+
+				Consultar os nomes dos livros (apenas) na tabela de livros:
+
+SELECT Nome_Livro FROM tbl_livro;
+
+
+#CONSULTAS ESPECIFICAS#
+				Consultar nomes de livros e IDs de autores respectivos na tabela de livros:
+
+SELECT Nome_Livro, ID_Autor FROM tbl_livro;
+
+
+				Consultar nomes de livros e seus ISBNs na tabela de livros:
+SELECT Nome_Livro, ISBN
+FROM tbl_livro;

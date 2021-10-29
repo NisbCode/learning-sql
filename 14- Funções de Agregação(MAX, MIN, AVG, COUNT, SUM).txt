@@ -1,0 +1,63 @@
+#O QUE SÃO#
+
+Funções de agregação são funções SQL que permitem executar uma operação aritmética nos valores de uma coluna em todos os registros de uma tabela.
+
+
+#SINTAXE#
+
+	função(ALL | DISTINCT expressão)
+		^
+		 |
+		Ou
+
+ALL – avalia todos os registros ao agregar o valor da função; é o comportamento padrão.
+DISTINCT – Usa apenas valores distintos (sem repetição) ao avaliar a função.
+
+OBS.: As funções de agregação desconsideram valores NULL (com exceção da função COUNT(*)).
+
+
+#TIPOS MAIS COMUNS DE FUNÇÕES DE AGREGAÇÃO#
+
+MIN = Valor Mínimo de um conjunto de valores
+MAX = Valor Máximo de um conjunto de valores
+AVG = Média Aritmética de um conjunto de valores
+SUM = Total (Soma) de um conjunto de valores
+COUNT = Contar quantidade total de itens
+
+
+OBS(2).: A funções SUM e AVG somente aceitam cm entrada um conjunto de números; 
+Já as demais funções podem operar também c outros tipos de dados não-numéricos, cm por ex strings ou datas
+
+
+#EXEMPLOS#
+
+				1 – Retornar o número total de autores cadastrados na tabela de autores:
+
+SELECT COUNT(*) FROM tbl_autores;
+
+
+				2 – Contar o número de autores que possuem livros cadastrados na tabela de autores, sem repetições
+
+SELECT COUNT(DISTINCT id_autor) FROM tbl_Livro;
+
+
+				3 – Descobrir o preço mais alto dos livros:
+
+SELECT MAX(Preco_Livro) FROM tbl_Livro;
+
+
+				4 – Descobrir a data de publicação do livro mais antigo:
+
+SELECT MIN(Data_Pub) FROM tbl_Livro;
+
+
+				5 – Retornar o preço médio dos livros cadastrados no banco:
+
+SELECT AVG(Preco_Livro) FROM tbl_Livro;
+
+
+				6 – Descobrir o valor total dos livros presentes na tabela de livros:
+
+SELECT SUM(Preco_Livro) FROM tbl_Livro;
+
+OSB(3).: É muito comum usar as funções agregadas em conjunto com a cláusula GROUP BY, aplicando-as a grupos de dados específicos.

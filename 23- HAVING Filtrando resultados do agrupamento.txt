@@ -1,0 +1,33 @@
+#PARA QUE SERVE#
+
+A cláusula HAVING é usada para especificar condições de filtragem em grupos de registros ou agregações.
+É frequentemente usada em conjunto com a cláusula GROUP BY para filtrar as colunas agrupadas.
+
+
+#SINTAXE#
+
+	SELECT colunas, função_agregação()
+	FROM tabela
+	WHERE filtro
+	GROUP BY colunas
+	HAVING filtro_agrupamento
+
+#EXEMPLOS DO USO DO HAVING#
+
+(usar tabela criada na aula anterior sobre a cláusula GROUP BY):
+
+1. Consulta retornando total de vendas das cidades com menos de 2500 produtos vendidos:
+
+SELECT Cidade, SUM(Quantidade) As Total                 --Quero as cidades somando a quantidade como Total da tabela de vendas
+FROM Vendas
+GROUP BY Cidade                                                        --Agrupadas por cada cidade 
+HAVING SUM(Quantidade) < 2500;                           --Que tendo o somatório das quantidades menor q 2500
+
+
+2. Consulta retornando total de vendas do produto ‘Teclado’ das cidades com menos de 1500 teclados vendidos:
+
+SELECT Cidade, SUM(Quantidade) As TotalTeclados
+FROM Vendas
+WHERE Produto = 'Teclado'
+GROUP BY Cidade
+HAVING SUM(Quantidade) < 1500;

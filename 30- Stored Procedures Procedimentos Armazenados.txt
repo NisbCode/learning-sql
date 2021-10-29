@@ -1,0 +1,64 @@
+#O QUE É#
+
+Um procedimento armazenado (Stored Procedure, em inglês) é uma sub-rotina disponível para aplicações que acessam sistemas de bancos de dados relacionais
+Podem ser usados para validação de dados, controle de acesso, execução de declarações SQL complexas e muitas outras situações
+
+
+#CRIAR PROCEDIMENTOS ARMAZENADOS#
+
+	>SINTAXE<
+
+	CREATE PROCEDURE nome_procedimento (parâmetros)
+	declarações;
+
+
+#EXECUTANDO UM PROCEDIMENTO#
+
+Para invocar uma stored procedure usamos a instrução CALL:
+
+CALL nome_procedimento (parâmetros);
+
+#EXEMPLO1#
+
+Vamos a um exemplo. Iremos criar um procedimento para consulta de preço de livros, passando como parâmetro o ID do livro:
+
+CREATE PROCEDURE verPreço (varLivro smallint)
+SELECT CONCAT('O preço do livro ', Nome_Livro, ' é ', Preco_Livro) AS Preço
+FROM tbl_Livro
+WHERE ID_Livro = varLivro;
+
+
+#INVOCANDO O PROCEDIMENTO#
+
+CALL verPreço(3);
+
+
+#EXEMPLO2#
+
+Procedimento para trazer os preços dos livros de uma determinada editora, por nome da editora
+
+CREATE PROCEDURE consultaLivros (varEditora VARCHAR(50))
+SELECT CONCAT('O livro ', Nome_Livro, ' custa ', Preco_Livro) AS Preço
+FROM tbl_Livro
+INNER JOIN tbl_editoras
+ON tbl_livro.ID_editora = tbl_editoras.ID_Editora
+WHERE tbl_editoras.Nome_Editora = varEditora;
+
+
+#INVOCANDO O PROCEDIMENTO#
+
+CALL consultaLivros('O´Reilly');
+
+
+#EXCLUIR STORED PROCEDURE#
+
+Para excluir uma stored procedure do sistema, usamos a declaração DROP PROCEDURE, seguida do nome do procedimento a ser excluído:
+
+DROP PROCEDURE nome_procedimento;
+
+
+>Exemplo:
+
+Para excluir a procedure verPreço criada no exemplo anterior:
+
+DROP PROCEDURE verPreço;

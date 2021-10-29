@@ -1,0 +1,41 @@
+#USANDO DELETE#
+
+Sintaxe:
+
+	DELETE FROM tabela WHERE coluna = valor;
+
+
+#EXEMPLO DO USO DO DELETE#
+
+				Vamos excluir o autor da tabela de autores cujo id de autor é igual a 2:
+
+	DELETE FROM tbl_autores
+	WHERE ID_Autor = 2;
+
+>Obs.: Sempre use a cláusula WHERE para evitar a perda de dados da tabela!
+>Obs(2).: Ele vai apagar td a linha TODA q tiver c aquele dado, no caso, ID_Autor q seja = à 2
+
+
+#DELETANDO UMA COLUNA#
+
+Para remover qualquer coluna vamos utilizar o comando ALTER TABLE:
+
+	ALTER TABLE tb DROP COLUMN c2;
+
+
+
+#PARA QUE SERVE O TRUNCANTE TABLE#
+
+O comando TRUNCATE TABLE permite remover todas as linhas de uma tabela em uma única operação, sem registrar as exclusões de linhas individuais.
+
+
+#DIFERENÇA DE TRUNCANTE TABLE PARA DELETE#
+
+O TRUNCATE TABLE é cm executar DELETE, porém sem usar a cláusula WHERE. Portanto, é usada p apagar completamente o conteúdo de uma tabela no MySQL
+Entretanto, a cláusula TRUNCATE TABLE é mais rápida e utiliza menos recursos de sistema e log de transações durante sua execução.
+
+#USANDO O TRUNCATE TABLE#
+
+ 				Vamos excluir todos os registros presentes na tabela tbl_teste_incremento:
+
+TRUNCATE TABLE tbl_teste_incremento;

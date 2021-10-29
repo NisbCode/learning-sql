@@ -1,0 +1,6 @@
+#O QUE É#
+
+São usados p delimitar blocos de comandos a serem executados pela função procedure
+Cada declaração aninhada possui um delimitador ";"
+Um bloco begin pode ser anunhado dentro de outro
+

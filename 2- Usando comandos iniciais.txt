@@ -1,0 +1,43 @@
+#COMENTAR#
+
+-- Isso te permite falar oq quiser(Tem espaço)
+
+
+#CRIANDO UM BD#
+
+		>CREATE DATABASE IF NOT EXISTS nome_BD;
+
+Comando CREATE p criar
+DATABASE para mostrar oq quer
+[IF NOT EXISTS] não é obrigatório mas impede um erro se o BD já existir
+nome_BD seria o nome do BD              , exemplo:       db_Biblioteca
+
+O uso de bd ao criar nome serve p ajudar a n se confundir e é uma boa prática
+
+
+#VERIFICAR UM BANCO DE DADOS OU O QUE VC MANDAR#
+
+		>SHOW DATABASES;
+		>SHOW TABLES;
+
+Show mostra oq vc mandar
+DATABASES diz q é isso oq vc quer ver
+TABLES já é no caso as tabelas daquela BD q vc tiver usando dps de apertar USE
+
+#PARA COMEÇAR A USAR AQUELE BD#
+
+		>USE nome_banco_de_dados;                                                     ex.: USE db_Biblioteca;
+
+Identifica p o app q é aquele BD q vc tá usando
+
+
+#PARA VISUALIZAR O BANCO SENDO USADO NO MOMENTO#
+
+		>SELECT DATABASE();
+
+
+#PARA EXCLUIR UM BD#
+
+		>DROP DATABASE IF EXISTS nome_DB;
+
+IF EXISTS é opcional

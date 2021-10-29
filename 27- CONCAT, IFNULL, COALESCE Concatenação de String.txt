@@ -1,0 +1,98 @@
+#PARA Q SERVE#
+
+Para estudarmos estas funções, vamos criar uma tabela em um banco de dados de teste. Use o código a seguir para isso:
+
+				1- Criar tabela:
+
+CREATE TABLE teste_nulos (
+id smallint PRIMARY KEY auto_increment,
+item varchar(20),
+quantidade smallint NULL);
+ 
+
+				2- Inserir dados para testes:
+
+INSERT INTO teste_nulos (id, item, quantidade)
+VALUES (1, 'Pendrive', 5);
+INSERT INTO teste_nulos (id, item, quantidade)
+VALUES (2, 'Monitor', 7);
+INSERT INTO teste_nulos (id, item, quantidade)
+VALUES (3, 'Teclado', NULL);
+
+ 
+				3- Efetuar consulta para verificar funcionalidade da tabela:
+ 
+SELECT * FROM teste_nulos;
+Função CONCAT
+
+
+
+#SINTAXE#
+
+	CONCAT(string ou nome_coluna, <string | nome_coluna)
+
+
+#EXEMPLOS#
+
+SELECT CONCAT(‘Fábio ‘, ‘dos Reis’) AS ‘Meu Nome’;
+SELECT CONCAT(Nome_autor, ‘ ‘, Sobrenome_autor) AS ‘Nome Completo’
+FROM tbl_autores;
+SELECT CONCAT('Eu gosto do livro ', Nome_Livro)
+FROM tbl_Livro WHERE ID_autor = 2;
+
+
+#CONCATENAÇÃO COM NULL#
+
+Se uma string for concatenada com o valor NULL, o resultado retornado será apenas NULL, independentemente das outras partes concatenadas. 
+
+SELECT CONCAT('A quantidade adquirida é ', ' ', quantidade)
+FROM tbl_teste_nulos
+WHERE  item = 'Teclado'; --este é um item cuja quantidade é nula
+
+
+#EVITANDO O PROBLEMA#
+
+Para evitar esse problema de concatenação com valores nulos, há funções disponíveis que substituem NULL por outro valor. 
+São elas as funções IFNULL e COALESCE.
+
+>>>Função IFNULL
+Efetua a concatenação de strings e, caso a string concatenada seja nula, a substitui por um valor padrão (substituição)
+
+
+	>SINTAXE<
+
+	IFNULL (valor, substituição)
+
+
+>Exemplo:
+
+SELECT CONCAT('A quantidade adquirida é ', ' ', IFNULL(quantidade, 0))
+FROM teste_nulos
+WHERE  item = 'Teclado';
+
+
+>>>Função COALESCE
+
+Essa função retornará o primeiro valor não-nulo encontrado em seus argumentos
+
+
+	>SINTAXE<
+
+	COALESCE (valor1, valor2, …, valorN)
+
+
+>Exemplo:
+
+SELECT CONCAT('A quantidade adquirida é ', ' ', COALESCE(NULL, quantidade, NULL, 0))
+FROM teste_nulos
+WHERE  item = 'Teclado';
+
+
+Aqui vc tá passando uma série de argumentos as quais ele pode usar
+A primeira é null, ele vai ignorar pq ele quer preencher o valor
+A segunda é quantidade
+Mas a quantidade de teclados tá cm null
+Ele dnv vai ignorar
+Null dnv, ele n quer isso
+0, isso é um valor, então ele vai por 0
+O objetivo dele é pegar o 1 argumento p substituir o null pq usar null zera sua pesquisa, n retorna nd

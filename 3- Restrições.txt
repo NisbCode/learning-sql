@@ -1,0 +1,15 @@
+#TIPOS DE CONSTRAINTS(RESTRIÇÕES)#
+
+NOT NULL			->Impõe a uma coluna a NÃO aceitar valores NULL(0 é um valor)
+UNIQUE				->NÃO permite REPETIR DADOS naquela coluna
+DEFAULT				->É um valor q vc fala p ser o padrão, ao criar uma tbl nova, automaticamente terá aquele valor sem vc precisar pôr
+PRIMARY KEY			->Só se pode ter uma PK por tabela e seu valor n poderá ser repetido. Ela pode ser criada por um conjunto de colunas
+FOREIGN				->Está ligada a uma PK, formando assim a ligação entre tabelas
+
+O formato para dar o comando de uma foreign key é:
+
+CONSTRAINT <fk_nome da chave> FOREIGN KEY <Nome da coluna>REFERENCES <tbl_nome da tabela referenciada>(<nome da coluna referenciada>)
+
+EX.:
+
+CONSTRAINT fk_ID_Autores FOREIGN KEY(ID_Autor) REFERENCES tbl_autores(ID_Autor)

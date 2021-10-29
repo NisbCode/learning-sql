@@ -1,0 +1,22 @@
+É o seguinte você tem uma função blz? As funções elas podem receber argumentos, podem retomar valores podem fazer interação if e etc normal como em 
+uma linguagem de programação. As funções executam trabalho 
+
+Vc tem as Stored procedures que são funções armazenadas blz? 
+Elas são funções q são armazenadas dentro do banco de dados ali, portanto ocupam algum espaço e elas são mais rápidas do q um select normal vc faz uma 
+consulta normal no banco porque elas já tão armazenadas ali né? 
+E as Stored procedures ou procedimentos armazenados, elas também podem receber parâmetros de entrada e saída também vc pode retornar dados de uma
+Stored procedures executar um select dentro dela ou seja  uma consulta e vc também pode fazer um processamento, processamento pesado vc pode chamar 
+funções dentro de uma Stored procedure. Então Stored procedure é pra quando você tem coisas complexas ali a se fazer entendeu?
+Quanto mais complexos for o negócio maior vai ser o ganho pq vai ser mais rápido a Stored procedure vai pegar o negócio e vai fazer mais rápido pra ti
+
+Uma view é quando vc tem uma consulta que vc faz muito. As vezes vc tem consultas complexas que vc faz muito e não vale a pena ficar reescrevendo o mesmo 
+código e refazendo até pq quanto mais complexo a consulta menos desempenho ela tem. Então uma view ela cria uma tabela temporária no banco de dados para 
+que vc possa consultar essa tabela como se fosse uma tabela normal de banco de dados e essa tabela tem um cash ou seja ela é guardada no banco de 
+alguma forma e a partir daí vc tem um ganho de desempenho a consultar essa view vc pode fazer join com view entre várias outras coisas.
+
+
+#RESUMO#
+
+Então p esse tipo de coisa quando eu tivesse uma consulta q eu uso muito então eu já quero ter ela ali eu faço uma view.
+Qaundo eu tiver um processamento fundido pra fazer de pesado então eu faria uma Stored procedure
+E quando eu tivesse uma coisa simples mesmo eu faria uma função msm

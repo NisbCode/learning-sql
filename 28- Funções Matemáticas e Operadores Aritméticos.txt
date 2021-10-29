@@ -1,0 +1,58 @@
+#PARA Q SERVE#
+
+Usamos funções matemáticas e operadores aritméticos no MySQL para realizar cálculos com os dados das tabelas
+É possível realizar operações matemáticas simples nos valores de uma coluna e retornar resultados em uma coluna calculada
+P isso usamos os operadores matemáticos comuns de +, -, / e *, além dos operadores de divisão inteira e módulo (q é o resto da divisão inteira):
+
++  		Soma
+–   		Subtração
+/   		Divisão
+*   		Multiplicação
+% ou MOD   	Módulo
+DIV   		Divisão inteira
+
+
+#EXEMPLOS#
+
+SELECT 3 * 9;
+SELECT Nome_Livro, Preco_Livro * 5  AS 'Preço de 5 Unidades'
+FROM tbl_Livro;
+SELECT 2 * 9 / 3;
+SELECT Nome_Livro, Preco_Livro / 2 AS 'Preço com 50% de desconto'
+FROM tbl_Livro;
+SELECT 10 MOD 3;
+
+
+Aumentando os preços de todos os livros da tabela de livros em 10% (equivale a multiplicar o preço por 1,1):
+
+UPDATE tbl_livro
+SET Preco_livro = Preco_livro * 1.1;
+
+Neste ex tds os livros tem o preço reajustado, pq n usamos a cláusula WHERE na declaração. P aumentar apenas o preço de alguns livros, aplique o filtro adequado
+
+
+#FUNÇÕES MATEMÁTICAS#
+
+É possível também utilizar funções matemáticas nos valores de uma coluna e retornar resultados em uma coluna calculada.
+
+
+#FUNÇÕES MAIS COMUNS#
+
+CEILING()   		Arredondar para cima
+FLOOR()     		Arredondar para baixo
+PI() 			Retorna o valor de Pi
+POW(x,y) 			Retorna x elevado a y
+SQRT()   			Raiz quadrada de um argumento
+SIN() 			Retorna o seno de um número dado em radianos
+HEX() 			Retorna a representação hexadecimal de um valor decimal.
+
+
+#EXEMPLOS#
+
+SELECT Nome_Livro, CEILING(Preco_Livro * 5)  AS  'Preço Arredondado'
+FROM tbl_livro;
+SELECT PI();
+SELECT POW(2,4);
+SELECT SQRT(81);
+SELECT SIN(PI());
+SELECT HEX(1200);

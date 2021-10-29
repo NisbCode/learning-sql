@@ -1,0 +1,78 @@
+#O QUE É#
+
+Uma View (Exibição / Visão) é uma tabela virtual (estrutura de dados) baseada no conjunto de resultados de uma consulta SQL, criada a partir de um conjunto 
+de tabelas (ou outras views) presentes no banco, que servem com tabelas-base.
+
+
+#O QUE A COMPÕE#
+
+Contém linhas e colunas como uma tabela real, e pode receber comandos como declarações JOIN, WHERE e funções como uma tabela normal. 
+A view fica armazenada no banco de dados.
+Mostra sempre resultados de dados atualizados, pois o motor do banco de dados recria os dados toda vez que um usuário consulta a visão.
+
+
+#APLICAÇÃO DAS VIEWS#
+
+Usamos views para propósitos diversos:
+
+>Para simplificar o acesso a dados que estão armazenados em múltiplas tabelas relacionadas
+>Implementar segurança nos dados de uma tabela, por exemplo criando uma visão que limite os dados q podem ser acessados, por meio de uma cláusula WHERE
+>Prover isolamento de uma aplicação da estrutura específica de tabelas do banco acessado
+
+
+#SINTAXE#
+
+	CREATE VIEW Nome_visão
+	AS SELECT colunas
+	FROM tabela
+	WHERE condições;
+
+
+#EXEMPLO#
+
+		1- Vamos criar uma view de nome vw_LivrosAutores q retorne ao ser consultada os nomes dos livros e seus respectivos autores, eliminando
+				 a necessidade de realizar INNER JOIN toda vez que precisarmos desses dados:
+
+CREATE VIEW vw_LivrosAutores
+AS SELECT tbl_Livro.Nome_Livro AS Livro, tbl_autores.Nome_Autor AS Autor
+FROM tbl_Livro
+INNER JOIN tbl_autores
+ON tbl_Livro.ID_Autor = tbl_autores.ID_Autor;
+
+
+#COMO USAR A VIEW CRIADA#
+
+		Vamos utilizar a view criada, realizando uma consulta nela como se estivéssemos consultando uma tabela real do banco de dados:
+
+SELECT Livro, Autor
+FROM vw_LivrosAutores
+ORDER BY Autor;
+
+Veja como ficou mais simples retornar os nomes dos livros e dos autores agora – o código fica muito mais limpo e simples, facilitando por exemplo sua 
+incorporação em uma aplicação que acesse o banco de dados do MySQL.
+
+
+#ALTERANDO UMA VIEW#
+
+		1- Podemos alterar uma view, para que ela funcione de forma diferente, usando o comando ALTER VIEW. 
+Vamos alterar a view vw_LivrosAutores para incluir também os preços dos livros. Veja o código abaixo:
+
+ALTER  VIEW vw_LivrosAutores AS
+SELECT tbl_Livro.Nome_Livro AS Livro, tbl_autores.Nome_Autor AS Autor, Preco_Livro AS Valor
+FROM tbl_Livro
+INNER JOIN tbl_autores
+ON tbl_Livro.ID_Autor = tbl_autores.ID_Autor;
+
+
+		2- Podemos testá-la com uma consulta:
+
+SELECT * FROM vw_LivrosAutores;
+Views SQL no MySQL
+Excluindo views
+
+
+		3- Se precisarmos excluir uma view do MySQL, basta usar o comando DROP VIEW seguido do nome da View. 
+
+Vamos excluir a view vw_LivrosAutores:
+
+DROP VIEW vw_LivrosAutores;
